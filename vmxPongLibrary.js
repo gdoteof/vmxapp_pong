@@ -18,6 +18,7 @@ vmxApi('gmouth').onEnter(function(){ console.log("saw geoff's mouth"); }, null, 
 
 VMX.callback=function(detections){
   if(!VMX.storage.inited || !canvas){
+    console.log("callback loop is invoked..");
     try{
       canvas = VMX.getMagicCanvas();
     } catch(e){
@@ -129,7 +130,6 @@ function draw() {
     
   paddleRightY = VMX.storage.scaled_y(right_pos);
   paddleLeftY  =  VMX.storage.scaled_y(left_pos);
-  console.log(left_pos.y, paddleLeftY);
   clear();
   circle(x, y, radius);
 
